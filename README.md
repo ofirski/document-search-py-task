@@ -27,9 +27,9 @@ should return:
 1. download and extract the full [dataset](http://www.cs.biu.ac.il/~koppel/blogs/blogs.zip) into `data/` (see below)
 ```sh
 $ cd data
-$ wget http://www.cs.biu.ac.il/~koppel/blogs/blogs.zip
+$ wget https://nx-public.s3-eu-west-1.amazonaws.com/Interview/blogs.zip
 $ unzip blogs.zip -d .
-$ find blogs -type f -name '*.xml' -print0 | xargs -0 mv -t .
+$ find blogs -type f -name '*.xml' -exec mv {} $PWD \;
 ```
 2. implement a more efficient search index, while maintaing the existing interface (you should not modify the webserver code in this phase). the unit tests should still pass untouched. you may add more tests to help you develop faster. 
 
